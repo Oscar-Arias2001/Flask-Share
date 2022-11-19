@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+              <th scope="col">Symbol</th>
+              <th scope="col">Name</th>
+              <th scope="col">Shares</th>
+              <th scope="col">Price</th>
+              <th scope="col">TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dat in portfolio %}
+            <tr>
+              <th scope="row">{{ dat["symbol"] }}</th>
+              <td>{{ dat["name"] }}</td>
+              <td>{{ dat["shares"] }}</td>
+              <td>{{ dat["price"] }}</td>
+              <td>{{ dat["total"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th scope="row">CASH</th>
+                <td >{{ cash }}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th scope="row">TOTAL</th>
+                <td>{{ total }}</td>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
